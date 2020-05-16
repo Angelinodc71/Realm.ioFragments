@@ -4,13 +4,22 @@ import java.util.Date;
 
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
+import io.realm.annotations.Required;
 
 public class Producto extends RealmObject {
     @PrimaryKey
     private int id;
 
-    private String tienda, nombre;
+    @Required
+    private String tienda;
+
+    @Required
+    private String nombre;
+
     private boolean isMake;
+
+    @Required
+    private String all;
 
     public Producto(Integer id, String author, String subject, boolean isMake) {
         this.id = id;
